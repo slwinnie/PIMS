@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="insertProject">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="projectInfo" type="tns:projectInfoStruc" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="projectInfoStruc">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="projectNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="projectName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="client" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Manager" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Entity" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Type" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Category" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Classification" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HSE_Category" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Risk_Classification" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BusinessLine" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Scope" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Location" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Start_Date" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="End_Date" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Total_MHs" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Office" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="insertProjectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="insertProjectResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkProjectNo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="projectNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkProjectNoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="checkProjectNoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateProject">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="projectInfo" type="tns:projectInfoStruc" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateProjectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="updateProjectResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="importMHs">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="startDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="endDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="importMHsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="importMHsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="insertProjectSoapIn">
+    <wsdl:part name="parameters" element="tns:insertProject" />
+  </wsdl:message>
+  <wsdl:message name="insertProjectSoapOut">
+    <wsdl:part name="parameters" element="tns:insertProjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="checkProjectNoSoapIn">
+    <wsdl:part name="parameters" element="tns:checkProjectNo" />
+  </wsdl:message>
+  <wsdl:message name="checkProjectNoSoapOut">
+    <wsdl:part name="parameters" element="tns:checkProjectNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateProjectSoapIn">
+    <wsdl:part name="parameters" element="tns:updateProject" />
+  </wsdl:message>
+  <wsdl:message name="updateProjectSoapOut">
+    <wsdl:part name="parameters" element="tns:updateProjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="importMHsSoapIn">
+    <wsdl:part name="parameters" element="tns:importMHs" />
+  </wsdl:message>
+  <wsdl:message name="importMHsSoapOut">
+    <wsdl:part name="parameters" element="tns:importMHsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="TS_ProjectInformationSoap">
+    <wsdl:operation name="insertProject">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;B&gt;输入projectInfoStruc&lt;BR&gt;输出string,如果成功返回0，否则返回错误信息&lt;BR&gt;projectInfoStruc&lt;BR&gt;{&lt;/B&gt;&lt;BR&gt;string projectNo&lt;BR&gt;string projectName&lt;BR&gt;string client //varchar(38)&lt;BR&gt;string Status //Project Executing;Project Closed;Proposal Executing;Proposal Closed&lt;BR&gt;string Manager //5位员工号&lt;BR&gt;string Entity;//WPC;WPC BJ;WPC SH;LYG;LYG BJ;LYG SH;LYG CD;LYG NJ;LYG TJ;CD WPC;TJ WPC;UNET BJ &lt;BR&gt;string Type; //Chemical;Hydrocarbon;Hydrocarbon Downstream;Hydrocarbon Upstream;Infrastructure;Infrastructure HVE;Metals&amp;Minerals HVE;Metals&amp;Minerals;Power HVE;Power;Overhead&lt;BR&gt;string Category;//Work in Hands;Prospect;Blue Sky&lt;BR&gt;string Classification;//Small;Medium;Large&lt;BR&gt;string HSE_Category;//N/A;WP-Primacy;WP-Non-Primacy&lt;BR&gt;string Risk_Classification; //Low;Moderate;High&lt;BR&gt;string BusinessLine;//Consult;Deliver;Improve;Advisory&lt;BR&gt;string Scope;//var(100)&lt;BR&gt;string Location;//var(200)&lt;BR&gt;string Start_Date;&lt;BR&gt;string End_Date;&lt;BR&gt;string Total_MHs;&lt;BR&gt;string Office;//BJ;SH;CD;GPC;Cor;TJ;NJ;AdvisianBJ&lt;BR&gt;&lt;B&gt;}&lt;/B&gt; </wsdl:documentation>
+      <wsdl:input message="tns:insertProjectSoapIn" />
+      <wsdl:output message="tns:insertProjectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="checkProjectNo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;B&gt;输入string projectNo&lt;BR&gt;输出bool 如果没有重复为true,有重复为false&lt;/B&gt;</wsdl:documentation>
+      <wsdl:input message="tns:checkProjectNoSoapIn" />
+      <wsdl:output message="tns:checkProjectNoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateProject">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;B&gt;输入projectInfoStruc&lt;BR&gt;输出string,如果成功返回0，否则返回错误信息</wsdl:documentation>
+      <wsdl:input message="tns:updateProjectSoapIn" />
+      <wsdl:output message="tns:updateProjectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="importMHs">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;B&gt;输入开始时间startDate,结束时间endDate，格式均为yyyy-MM-dd格式&lt;BR&gt;输出string,如果成功返回0，否则返回错误信息</wsdl:documentation>
+      <wsdl:input message="tns:importMHsSoapIn" />
+      <wsdl:output message="tns:importMHsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TS_ProjectInformationSoap" type="tns:TS_ProjectInformationSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="insertProject">
+      <soap:operation soapAction="http://tempuri.org/insertProject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkProjectNo">
+      <soap:operation soapAction="http://tempuri.org/checkProjectNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateProject">
+      <soap:operation soapAction="http://tempuri.org/updateProject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="importMHs">
+      <soap:operation soapAction="http://tempuri.org/importMHs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TS_ProjectInformationSoap12" type="tns:TS_ProjectInformationSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="insertProject">
+      <soap12:operation soapAction="http://tempuri.org/insertProject" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkProjectNo">
+      <soap12:operation soapAction="http://tempuri.org/checkProjectNo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateProject">
+      <soap12:operation soapAction="http://tempuri.org/updateProject" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="importMHs">
+      <soap12:operation soapAction="http://tempuri.org/importMHs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TS_ProjectInformation">
+    <wsdl:port name="TS_ProjectInformationSoap" binding="tns:TS_ProjectInformationSoap">
+      <soap:address location="http://cnbeiwpweb02v/ts_webservices/ts_projectinformation.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TS_ProjectInformationSoap12" binding="tns:TS_ProjectInformationSoap12">
+      <soap12:address location="http://cnbeiwpweb02v/ts_webservices/ts_projectinformation.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

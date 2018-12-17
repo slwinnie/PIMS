@@ -1,0 +1,79 @@
+﻿			td.risk-detail-title{
+				/*font-weight:bold;*/
+				width: 300px;
+				text-align: right;
+			}
+			td.underline{
+				/*border-bottom: 1px solid darkgray;*/
+				vertical-align:bottom;
+			}
+			div.SectionName{
+				background:lightgray;padding:10px;
+				font-weight:bold;
+			}
+			td{ border: 0px solid gold;padding: 2px;}
+			table.fullTable{
+				width:100%;
+			}
+			.fullTable th{
+				border:1px gray solid;
+			}
+			.hightlightBackground{
+				background:#FF0;
+				font-weight:bold;
+			}
+			td.overall-risk-classification-title{
+
+				width: 300px;
+				text-align: right;
+			}
+			table.risk1{
+				border:0px;
+			}
+			table.risk1 th{
+				background:#FF9;
+			}
+			table.risk1 td{
+				/*border:1px solid lightgray;*/
+				vertical-align:top;
+			}
+			td.risk1-Title{
+				/*font-weight:bold;*/
+			}
+
+			table.risk2{
+				border:0px;
+			}
+			table.risk2 th{
+				background:#FF9;
+			}
+			table.risk2 td{
+				border:0px solid lightgray;
+				vertical-align:top;
+			}
+			td.risk2-Title{
+				/*font-weight:bold;*/
+			}
+			h2.text-center{
+				text-align: center;
+			}
+			
+        	.text-input {
+            	width: 100%;
+	            /*border: 0;*/
+    	        color: blue;
+        	    display: inline-block;
+            }
+            .text-input:hover {
+                background-color:cornsilk;
+            }
+            .text-input-readonly {
+                background-color:aliceblue;
+        	}
+            label {
+                font-weight: normal !important; /*清除加粗效果*/
+            }
+            textarea.RS {
+                width: 100%;
+                height: 140px;
+            }
