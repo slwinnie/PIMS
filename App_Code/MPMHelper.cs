@@ -21,7 +21,8 @@ public class MPMHelper
         var preText = new StringBuilder();
         for(var i = 0; i < level; i++)
         {
-            preText.Append("--");
+            //preText.Append("--");
+            preText.Append(string.Format("<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>"));
         }
         return string.Format("{0}{1}", preText, title);
     }
