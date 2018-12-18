@@ -33,6 +33,7 @@
         <h4 class="text-center">Organization Peoples</h4>
 
         <h5>Organization:<strong> <%= o != null ? o.Title : string.Empty %></strong></h5>
+        <div class="container" >
         <table class="table table-bordered table-hover header">
             <thead>
                 <tr class="HeaderLinearBackground">
@@ -57,6 +58,7 @@
             %>
             </tbody>
             </table>
+            </div>
             <div class="text-center">
                 <a href="javascript:void(0);" class="btn btn-primary add clear-border-radius">Add People</a>
             </div>

@@ -34,10 +34,13 @@ public class OrganizationHelper
     }
     public static string ToolBar(int parentId, int? currentLevelNo, string title, int organizationId)
     {
-        return string.Format("<span class='owner'> <a href='OrganizationPeoples.aspx?organizationId={3}'>Peoples</a> | <a href ='javascript:void();' data-id='{0}' class ='add-item' data-levelno='{1}'>Add child</a> | <a href = 'javascript:void();' class='edit-item' data-levelno='{1}' data-title='{2}' data-id='{3}' data-parentid='{0}'>Edit</a> | <a href = 'javascript:void();' class='delete-item' data-levelno='{1}' data-id='{0}'>Delete</a></span>", parentId, currentLevelNo, title, organizationId);
+        // <div class='btn-group'><a href='javascript:void(0);' class='btn btn-xs btn-primary clear-border-radius edit'>Edit</a><a href='javascript:void(0);' class='btn btn-xs btn-danger clear-border-radius delete'>Delete</a></div>
+        // return string.Format("<span class='owner'> <a href='OrganizationPeoples.aspx?organizationId={3}'>Peoples</a> | <a href ='javascript:void();' data-id='{0}' class ='add-item' data-levelno='{1}'>Add child</a> | <a href = 'javascript:void();' class='edit-item' data-levelno='{1}' data-title='{2}' data-id='{3}' data-parentid='{0}'>Edit</a> | <a href = 'javascript:void();' class='delete-item' data-levelno='{1}' data-id='{0}'>Delete</a></span>", parentId, currentLevelNo, title, organizationId);
+        return string.Format("<div class='btn-group'> <a href='OrganizationPeoples.aspx?organizationId={3}' class = 'edit-item btn btn-xs btn-warning clear-border-radius'>Peoples</a> <a href ='javascript:void();' data-id='{0}' class ='btn btn-xs btn-success clear-border-radius add-item' data-levelno='{1}'>Add child</a> <a href = 'javascript:void();' class='edit-item btn btn-xs btn-primary clear-border-radius' data-levelno='{1}' data-title='{2}' data-id='{3}' data-parentid='{0}'>Edit</a> <a href = 'javascript:void();' class='delete-item btn btn-xs btn-danger clear-border-radius' data-levelno='{1}' data-id='{0}'>Delete</a></div>", parentId, currentLevelNo, title, organizationId);
+
     }
     public static string ToolBarRoot(int parentId, int? currentLevelNo, string title, int organizationId)
     {
-        return string.Format("<span class='owner'> <a href='OrganizationPeoples.aspx?organizationId={3}'>Peoples</a> <a href ='javascript:void();' data-id='{0}' class ='add-item' data-levelno='{1}'>Add child</a> </span>", parentId, currentLevelNo + 1, title, organizationId);
+        return string.Format("<div class='btn-group'> <a href='OrganizationPeoples.aspx?organizationId={3}' class='edit-item btn btn-xs btn-warning clear-border-radius'>Peoples</a> <a href ='javascript:void();' data-id='{0}' class ='btn btn-xs btn-success clear-border-radius add-item' data-levelno='{1}'>Add child</a> </div>", parentId, currentLevelNo + 1, title, organizationId);
     }
 }

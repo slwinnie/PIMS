@@ -16,6 +16,16 @@
         .organization-peoples{
             color:darkgoldenrod;
         }
+        .tbl {
+            width:100%;
+        }
+
+        .tbl tr:hover {
+            background-color:lightgray;
+        }
+        .tbl-cmd {
+            width:230px;
+        }
     </style>
     <script>
         $(function () {
@@ -28,30 +38,32 @@
     <uc1:ResourceMenu runat="server" ID="ResourceMenu" />
     <strong>PIMS / Resource Management</strong> > Organization
         <h4 class="text-center">Organization</h4>
-    <div class="container" style="border:1px dotted gray;font-size:16px;">
+    <div class="container" >
+        <table class="table table-bordered tbl">
+            <tr class="HeaderLinearBackground"><td>Element</td><td>Action(s)</td></tr>
             <%
                 var db = new PPPEntities();
                 foreach(var itemLv0 in db.TOrganization.Where(x=>x.LevelNo == 0))
                 {
-                    %><%=itemLv0.Title %> <%=OrganizationHelper.OrganizationPeoples(itemLv0.OrganizationId) %> <%=OrganizationHelper.ToolBarRoot(itemLv0.OrganizationId, itemLv0.LevelNo, itemLv0.Title, itemLv0.OrganizationId)%><br/>
+                    %><tr><td><%=itemLv0.Title %></td><td class="tbl-cmd"><%=OrganizationHelper.ToolBarRoot(itemLv0.OrganizationId, itemLv0.LevelNo, itemLv0.Title, itemLv0.OrganizationId)%></td></tr>
                 <%
                     foreach (var itemLv1 in db.TOrganization.Where(x => x.LevelNo == 1))
                     {
-                        %><%=MPMHelper.FmtTitle(itemLv1.Title, 1) %> <%=OrganizationHelper.OrganizationPeoples(itemLv1.OrganizationId) %>  <%=OrganizationHelper.ToolBar(itemLv1.OrganizationId, itemLv1.LevelNo, itemLv1.Title, itemLv1.OrganizationId)%> <br/> <%
+                        %><tr><td><%=MPMHelper.FmtTitle(itemLv1.Title, 1) %></td><td><%=OrganizationHelper.ToolBar(itemLv1.OrganizationId, itemLv1.LevelNo, itemLv1.Title, itemLv1.OrganizationId)%> </td></tr> <%
                         foreach (var itemLv2 in db.TOrganization.Where(x => x.LevelNo == 2 && x.ParentId == itemLv1.OrganizationId).OrderBy(x=>x.LevelPos))
                         {
-                            %><%=MPMHelper.FmtTitle(itemLv2.Title, 2) %> <%=OrganizationHelper.OrganizationPeoples(itemLv2.OrganizationId) %> <%=OrganizationHelper.ToolBar(itemLv2.OrganizationId, itemLv2.LevelNo, itemLv2.Title, itemLv2.OrganizationId)%> <br/>  <%
+                            %><tr><td><%=MPMHelper.FmtTitle(itemLv2.Title, 2) %></td><td><%=OrganizationHelper.ToolBar(itemLv2.OrganizationId, itemLv2.LevelNo, itemLv2.Title, itemLv2.OrganizationId)%> </td></tr>  <%
 
                             foreach (var itemLv3 in db.TOrganization.Where(x => x.LevelNo == 3 && x.ParentId == itemLv2.OrganizationId).OrderBy(x=>x.LevelPos))
                             {
-                                %><%=MPMHelper.FmtTitle(itemLv3.Title, 3) %> <%=OrganizationHelper.OrganizationPeoples(itemLv3.OrganizationId) %> <%=OrganizationHelper.ToolBar(itemLv3.OrganizationId, itemLv3.LevelNo, itemLv3.Title, itemLv3.OrganizationId)%> <br/>  <%
+                                %><tr><td><%=MPMHelper.FmtTitle(itemLv3.Title, 3) %></td><td><%=OrganizationHelper.ToolBar(itemLv3.OrganizationId, itemLv3.LevelNo, itemLv3.Title, itemLv3.OrganizationId)%> </td></tr>  <%
                                 
                                 foreach (var itemLv4 in db.TOrganization.Where(x => x.LevelNo == 4 && x.ParentId == itemLv3.OrganizationId).OrderBy(x=>x.LevelPos))
                                 {
-                                    %><%=MPMHelper.FmtTitle(itemLv4.Title, 4) %> <%=OrganizationHelper.OrganizationPeoples(itemLv4.OrganizationId) %> <%=OrganizationHelper.ToolBar(itemLv4.OrganizationId, itemLv4.LevelNo, itemLv4.Title, itemLv4.OrganizationId)%><br/> <%
+                                    %><tr><td><%=MPMHelper.FmtTitle(itemLv4.Title, 4) %></td><td><%=OrganizationHelper.ToolBar(itemLv4.OrganizationId, itemLv4.LevelNo, itemLv4.Title, itemLv4.OrganizationId)%></td></tr> <%
                                     foreach (var itemLv5 in db.TOrganization.Where(x => x.LevelNo == 5 && x.ParentId == itemLv4.OrganizationId).OrderBy(x=>x.LevelPos))
                                     {
-                                        %><%=MPMHelper.FmtTitle(itemLv5.Title, 5) %> <%=OrganizationHelper.OrganizationPeoples(itemLv5.OrganizationId) %> <%=OrganizationHelper.ToolBar(itemLv5.OrganizationId, itemLv5.LevelNo, itemLv5.Title, itemLv5.OrganizationId)%><br/>  <%
+                                        %><tr><td><%=MPMHelper.FmtTitle(itemLv5.Title, 5) %></td><td><%=OrganizationHelper.ToolBar(itemLv5.OrganizationId, itemLv5.LevelNo, itemLv5.Title, itemLv5.OrganizationId)%></td></tr>  <%
                                     }
                                 }
                             }
@@ -59,6 +71,7 @@
                     }
                 }
                 %>
+        </table>
         </div>
     </form>
         <script src="<%=ResolveUrl("~/Scripts/jquery-1.9.1.min.js")%>" ></script>
