@@ -91,25 +91,25 @@
                 var db = new PPPEntities();
                 foreach(var itemLv0 in db.TOrganization.Where(x=>x.LevelNo == 0))
                 {
-                    %><a href="Default.aspx?ownerId=<%=itemLv0.OrganizationId %>&levelNo=<%=itemLv0.LevelNo %>&fy=<%=Request["fy"] %>"><%=itemLv0.Title %></a> <span class="<%=Request["OrganizationId"].ToString() == itemLv0.OrganizationId.ToString() ? "selected" : "owner" %>"> <%=itemLv0.Title %></span><br/>
+                    %><a href="Default.aspx?ownerId=<%=itemLv0.OrganizationId %>&levelNo=<%=itemLv0.LevelNo %>&fy=<%=Request["fy"] %>"><%=itemLv0.Title %></a> <br/>
                 <%
                     foreach (var itemLv1 in db.TOrganization.Where(x => x.LevelNo == 1))
                     {
-                        %><a href="Default.aspx?ownerId=<%=itemLv1.OrganizationId %>&levelNo=<%=itemLv1.LevelNo %>&fy=<%=Request["fy"] %>"><%=MPMHelper.FmtTitle(itemLv1.Title, 1) %></a> <span class="<%=Request["OrganizationId"].ToString() == itemLv1.OrganizationId.ToString() ? "selected" : "owner" %>"> <%=itemLv1.Title %></span> <br/><%
+                        %><a href="Default.aspx?ownerId=<%=itemLv1.OrganizationId %>&levelNo=<%=itemLv1.LevelNo %>&fy=<%=Request["fy"] %>"><%=MPMHelper.FmtTitle(itemLv1.Title, 1) %></a>  <br/><%
                         foreach (var itemLv2 in db.TOrganization.Where(x => x.LevelNo == 2 && x.ParentId == itemLv1.OrganizationId).OrderBy(x=>x.LevelPos))
                         {
-                            %><a href="Default.aspx?ownerId=<%=itemLv2.OrganizationId %>&levelNo=<%=itemLv2.LevelNo %>&fy=<%=Request["fy"] %>"><%=MPMHelper.FmtTitle(itemLv2.Title, 2) %></a>  <span class="<%=Request["OrganizationId"].ToString() == itemLv2.OrganizationId.ToString() ? "selected" : "owner" %>"> <%=itemLv2.Title %></span> <br/><%
+                            %><a href="Default.aspx?ownerId=<%=itemLv2.OrganizationId %>&levelNo=<%=itemLv2.LevelNo %>&fy=<%=Request["fy"] %>"><%=MPMHelper.FmtTitle(itemLv2.Title, 2) %></a>   <br/><%
 
                             foreach (var itemLv3 in db.TOrganization.Where(x => x.LevelNo == 3 && x.ParentId == itemLv2.OrganizationId).OrderBy(x=>x.LevelPos))
                             {
-                                %><a href="Default.aspx?ownerId=<%=itemLv3.OrganizationId %>&levelNo=<%=itemLv3.LevelNo %>&fy=<%=Request["fy"] %>"><%=MPMHelper.FmtTitle(itemLv3.Title, 3) %></a>  <span class="<%=Request["OrganizationId"].ToString() == itemLv3.OrganizationId.ToString() ? "selected" : "owner" %>"> <%=itemLv3.Title %></span> <br/><%
+                                %><a href="Default.aspx?ownerId=<%=itemLv3.OrganizationId %>&levelNo=<%=itemLv3.LevelNo %>&fy=<%=Request["fy"] %>"><%=MPMHelper.FmtTitle(itemLv3.Title, 3) %></a>  <br/><%
                                 
                                 foreach (var itemLv4 in db.TOrganization.Where(x => x.LevelNo == 4 && x.ParentId == itemLv3.OrganizationId).OrderBy(x=>x.LevelPos))
                                 {
-                                    %><a href="Default.aspx?ownerId=<%=itemLv4.OrganizationId %>&levelNo=<%=itemLv4.LevelNo %>&fy=<%=Request["fy"] %>"><%=MPMHelper.FmtTitle(itemLv4.Title, 4) %></a>  <span class="<%=Request["OrganizationId"].ToString() == itemLv4.OrganizationId.ToString() ? "selected" : "owner" %>"> <%=itemLv4.Title %></span> <br/><%
+                                    %><a href="Default.aspx?ownerId=<%=itemLv4.OrganizationId %>&levelNo=<%=itemLv4.LevelNo %>&fy=<%=Request["fy"] %>"><%=MPMHelper.FmtTitle(itemLv4.Title, 4) %></a>  <br/><%
                                     foreach (var itemLv5 in db.TOrganization.Where(x => x.LevelNo == 5 && x.ParentId == itemLv4.OrganizationId).OrderBy(x=>x.LevelPos))
                                     {
-                                        %><a href="Default.aspx?ownerId=<%=itemLv5.OrganizationId %>&levelNo=<%=itemLv5.LevelNo %>&fy=<%=Request["fy"] %>"><%=MPMHelper.FmtTitle(itemLv5.Title, 5) %></a>  <span class="<%=Request["OrganizationId"].ToString() == itemLv5.OrganizationId.ToString() ? "selected" : "owner" %>"> <%=itemLv5.Title %></span> <br/><%
+                                        %><a href="Default.aspx?ownerId=<%=itemLv5.OrganizationId %>&levelNo=<%=itemLv5.LevelNo %>&fy=<%=Request["fy"] %>"><%=MPMHelper.FmtTitle(itemLv5.Title, 5) %></a> <br/><%
                             
                                     }
                                 }

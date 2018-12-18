@@ -1,3 +1,0 @@
-﻿$(function () {
-    $(".menu-manpowermanagement").addClass("active");
-})
