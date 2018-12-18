@@ -22,10 +22,10 @@
         <uc1:Menu runat="server" id="Menu" />
 <!-- 导航菜单::结束 -->
     <form id="form1" runat="server">
-        <div class="col col-lg-3 col-md-3 col-sm-3">
+        <%--<div class="col col-lg-3 col-md-3 col-sm-3" >
             <uc1:LeftMenu runat="server" id="LeftMenu" />
-<%--            <uc1:ProjectInformation runat="server" ID="ProjectInformation" />--%>
-        </div>
+            <uc1:ProjectInformation runat="server" ID="ProjectInformation" />
+        </div>--%>
         <div class="col col-lg-9 col-md-9 col-sm-9">
             <div style="border: 0px solid blue; height: 600px; padding-right: 15px;">
                     <h4 class="text-center">Project Information</h4>
